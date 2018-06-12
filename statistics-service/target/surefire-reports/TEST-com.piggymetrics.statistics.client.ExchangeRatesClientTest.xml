@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.piggymetrics.statistics.client.ExchangeRatesClientTest" time="3.961" tests="1" errors="1" skipped="0" failures="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.171-b11"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/joe/Ellite/PiggyMetrics"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/joe/Ellite/PiggyMetrics"/>
+    <property name="java.runtime.version" value="1.8.0_171-b11"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-oracle/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="4.13.0-36-generic"/>
+    <property name="user.home" value="/home/joe"/>
+    <property name="user.timezone" value="America/Chicago"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="user.name" value="joe"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-oracle/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher package"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_171"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="shouldRetrieveExchangeRates" classname="com.piggymetrics.statistics.client.ExchangeRatesClientTest" time="3.961">
+    <error message="getRates failed and no fallback available." type="com.netflix.hystrix.exception.HystrixRuntimeException">com.netflix.hystrix.exception.HystrixRuntimeException: getRates failed and no fallback available.
+	at com.netflix.hystrix.AbstractCommand$16.call(AbstractCommand.java:805)
+	at com.netflix.hystrix.AbstractCommand$16.call(AbstractCommand.java:789)
+	at rx.internal.operators.OperatorOnErrorResumeNextViaFunction$4.onError(OperatorOnErrorResumeNextViaFunction.java:139)
+	at rx.internal.operators.OperatorDoOnEach$1.onError(OperatorDoOnEach.java:71)
+	at rx.internal.operators.OperatorDoOnEach$1.onError(OperatorDoOnEach.java:71)
+	at rx.internal.operators.OperatorDoOnEach$1.onError(OperatorDoOnEach.java:71)
+	at com.netflix.hystrix.AbstractCommand$DeprecatedOnFallbackHookApplication$1.onError(AbstractCommand.java:1494)
+	at com.netflix.hystrix.AbstractCommand$FallbackHookApplication$1.onError(AbstractCommand.java:1384)
+	at com.netflix.hystrix.HystrixCommand$2.call(HystrixCommand.java:313)
+	at com.netflix.hystrix.HystrixCommand$2.call(HystrixCommand.java:305)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.Observable.unsafeSubscribe(Observable.java:8460)
+	at rx.internal.operators.OperatorOnErrorResumeNextViaFunction$4.onError(OperatorOnErrorResumeNextViaFunction.java:141)
+	at rx.internal.operators.OperatorDoOnEach$1.onError(OperatorDoOnEach.java:71)
+	at rx.internal.operators.OperatorDoOnEach$1.onError(OperatorDoOnEach.java:71)
+	at com.netflix.hystrix.AbstractCommand$HystrixObservableTimeoutOperator$3.onError(AbstractCommand.java:1005)
+	at rx.internal.operators.OperatorDoOnEach$1.onError(OperatorDoOnEach.java:71)
+	at rx.internal.operators.OperatorSubscribeOn$1$1.onError(OperatorSubscribeOn.java:59)
+	at rx.internal.operators.OperatorDoOnEach$1.onError(OperatorDoOnEach.java:71)
+	at com.netflix.hystrix.AbstractCommand$DeprecatedOnRunHookApplication$1.onError(AbstractCommand.java:1453)
+	at com.netflix.hystrix.AbstractCommand$ExecutionHookApplication$1.onError(AbstractCommand.java:1349)
+	at com.netflix.hystrix.HystrixCommand$1.call(HystrixCommand.java:296)
+	at com.netflix.hystrix.HystrixCommand$1.call(HystrixCommand.java:288)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.Observable.unsafeSubscribe(Observable.java:8460)
+	at com.netflix.hystrix.AbstractCommand$5.call(AbstractCommand.java:521)
+	at com.netflix.hystrix.AbstractCommand$5.call(AbstractCommand.java:497)
+	at rx.Observable.unsafeSubscribe(Observable.java:8460)
+	at rx.internal.operators.OperatorSubscribeOn$1.call(OperatorSubscribeOn.java:94)
+	at com.netflix.hystrix.strategy.concurrency.HystrixContexSchedulerAction$1.call(HystrixContexSchedulerAction.java:56)
+	at com.netflix.hystrix.strategy.concurrency.HystrixContexSchedulerAction$1.call(HystrixContexSchedulerAction.java:47)
+	at com.netflix.hystrix.strategy.concurrency.HystrixContexSchedulerAction.call(HystrixContexSchedulerAction.java:69)
+	at rx.internal.schedulers.ScheduledAction.run(ScheduledAction.java:55)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: feign.FeignException: status 404 reading ExchangeRatesClient#getRates(Currency); content:
+{
+  "0": "#################################################################################################################################",
+  "1": "#                                                                                                                               #",
+  "2": "# IMPORTANT - PLEASE UPDATE YOUR API ENDPOINT                                                                                   #",
+  "3": "#                                                                                                                               #",
+  "4": "# This API endpoint is deprecated and has now been shut down. To keep using the Fixer API, please update your integration       #",
+  "5": "# to use the new Fixer API endpoint, designed as a simple drop-in replacement.                                                  #",
+  "6": "# You will be required to create an account at https://fixer.io and obtain an API access key.                                   #",
+  "7": "#                                                                                                                               #",
+  "8": "# For more information on how to upgrade please visit our Github Tutorial at: https://github.com/fixerAPI/fixer#readme          #",
+  "9": "#                                                                                                                               #",
+  "a": "#################################################################################################################################"
+}
+	at feign.FeignException.errorStatus(FeignException.java:62)
+	at feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:91)
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:134)
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:76)
+	at feign.hystrix.HystrixInvocationHandler$1.run(HystrixInvocationHandler.java:97)
+	at com.netflix.hystrix.HystrixCommand$1.call(HystrixCommand.java:293)
+	at com.netflix.hystrix.HystrixCommand$1.call(HystrixCommand.java:288)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.Observable.unsafeSubscribe(Observable.java:8460)
+	at com.netflix.hystrix.AbstractCommand$5.call(AbstractCommand.java:521)
+	at com.netflix.hystrix.AbstractCommand$5.call(AbstractCommand.java:497)
+	at rx.Observable.unsafeSubscribe(Observable.java:8460)
+	at rx.internal.operators.OperatorSubscribeOn$1.call(OperatorSubscribeOn.java:94)
+	at com.netflix.hystrix.strategy.concurrency.HystrixContexSchedulerAction$1.call(HystrixContexSchedulerAction.java:56)
+	at com.netflix.hystrix.strategy.concurrency.HystrixContexSchedulerAction$1.call(HystrixContexSchedulerAction.java:47)
+	at com.netflix.hystrix.strategy.concurrency.HystrixContexSchedulerAction.call(HystrixContexSchedulerAction.java:69)
+	at rx.internal.schedulers.ScheduledAction.run(ScheduledAction.java:55)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</error>
+    <system-out><![CDATA[2018-06-09 14:36:25.458  INFO 7163 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.piggymetrics.statistics.client.ExchangeRatesClientTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-06-09 14:36:25.462  INFO 7163 --- [           main] o.s.t.c.s.DefaultTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-09 14:36:25.473  INFO 7163 --- [           main] o.s.t.c.s.DefaultTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@63e72528, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4cd52ceb, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@42f71036, org.springframework.test.context.support.DirtiesContextTestExecutionListener@775ba5e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5de111fd, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3836dcde]
+2018-06-09 14:36:25.707  INFO 7163 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@2152efdb: startup date [Sat Jun 09 14:36:25 CDT 2018]; root of context hierarchy
+2018-06-09 14:36:25.779  INFO 7163 --- [           main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-06-09 14:36:25.792  INFO 7163 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'configurationPropertiesRebinderAutoConfiguration' of type [class org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$60d0b92a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.3.5.RELEASE)
+
+2018-06-09 14:36:26.184  INFO 7163 --- [           main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at: http://localhost:8888
+2018-06-09 14:36:26.235  WARN 7163 --- [           main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/application/default": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+2018-06-09 14:36:26.249  INFO 7163 --- [           main] c.p.s.client.ExchangeRatesClientTest     : No active profile set, falling back to default profiles: default
+2018-06-09 14:36:26.276  INFO 7163 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@7a3a7b43: startup date [Sat Jun 09 14:36:26 CDT 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@2152efdb
+2018-06-09 14:36:27.431  INFO 7163 --- [           main] o.s.i.config.IntegrationRegistrar        : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2018-06-09 14:36:27.645  WARN 7163 --- [           main] o.s.c.a.ConfigurationClassPostProcessor  : Cannot enhance @Configuration bean definition 'refreshScope' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2018-06-09 14:36:27.650  INFO 7163 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3d29162c-129a-3ff5-9700-619d2babc1e0
+2018-06-09 14:36:27.702  INFO 7163 --- [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2018-06-09 14:36:27.707  INFO 7163 --- [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2018-06-09 14:36:27.716  INFO 7163 --- [           main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-06-09 14:36:27.776  INFO 7163 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [class org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$b22745b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-09 14:36:27.873  INFO 7163 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'com.piggymetrics.statistics.client.ExchangeRatesClient' of type [class org.springframework.cloud.netflix.feign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-09 14:36:27.932  INFO 7163 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [class org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$dd647e67] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-09 14:36:27.942  INFO 7163 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [class org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-09 14:36:27.963  INFO 7163 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7021e376' of type [class org.springframework.security.oauth2.provider.expression.OAuth2MethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-09 14:36:28.010  INFO 7163 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [class org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$2392119] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-09 14:36:28.025  INFO 7163 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [class org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-09 14:36:28.050  INFO 7163 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [class org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$60d0b92a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-09 14:36:28.090  INFO 7163 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.RefreshEndpointAutoConfiguration' of type [class org.springframework.cloud.autoconfigure.RefreshEndpointAutoConfiguration$$EnhancerBySpringCGLIB$$a2fbb20] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-09 14:36:28.124  INFO 7163 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.stream.config.ChannelBindingServiceConfiguration$PostProcessorConfiguration' of type [class org.springframework.cloud.stream.config.ChannelBindingServiceConfiguration$PostProcessorConfiguration$$EnhancerBySpringCGLIB$$3c814eb9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-09 14:36:28.396  INFO 7163 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@1970351a: startup date [Sat Jun 09 14:36:28 CDT 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@7a3a7b43
+2018-06-09 14:36:28.450  INFO 7163 --- [           main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-06-09 14:36:29.132  INFO 7163 --- [      Thread-11] o.s.b.a.mongo.embedded.EmbeddedMongo     : note: noprealloc may hurt performance in many applications
+2018-06-09 14:36:29.138  INFO 7163 --- [      Thread-11] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-06-09T14:36:29.138-0500 [initandlisten] MongoDB starting : pid=7212 port=39945 dbpath=/tmp/embedmongo-db-2f37a1e4-ef36-4ba0-a110-b1919a348ddd 64-bit host=joe-VirtualBox
+2018-06-09 14:36:29.140  INFO 7163 --- [      Thread-11] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-06-09T14:36:29.140-0500 [initandlisten] db version v2.6.10
+2018-06-09 14:36:29.140  INFO 7163 --- [      Thread-11] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-06-09T14:36:29.140-0500 [initandlisten] git version: 5901dbfb49d16eaef6f2c2c50fba534d23ac7f6c
+2018-06-09 14:36:29.140  INFO 7163 --- [      Thread-11] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-06-09T14:36:29.140-0500 [initandlisten] build info: Linux build18.nj1.10gen.cc 2.6.32-431.3.1.el6.x86_64 #1 SMP Fri Jan 3 21:39:27 UTC 2014 x86_64 BOOST_LIB_VERSION=1_49
+2018-06-09 14:36:29.141  INFO 7163 --- [      Thread-11] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-06-09T14:36:29.141-0500 [initandlisten] allocator: tcmalloc
+2018-06-09 14:36:29.141  INFO 7163 --- [      Thread-11] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-06-09T14:36:29.141-0500 [initandlisten] options: { net: { bindIp: "127.0.0.1", http: { enabled: false }, port: 39945 }, security: { authorization: "disabled" }, storage: { dbPath: "/tmp/embedmongo-db-2f37a1e4-ef36-4ba0-a110-b1919a348ddd", journal: { enabled: false }, preallocDataFiles: false, smallFiles: true, syncPeriodSecs: 0.0 } }
+2018-06-09 14:36:29.164  INFO 7163 --- [      Thread-11] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-06-09T14:36:29.164-0500 [DataFileSync] warning: --syncdelay 0 is not recommended and can have strange performance
+2018-06-09 14:36:29.221  INFO 7163 --- [      Thread-11] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-06-09T14:36:29.219-0500 [initandlisten] allocating new ns file /tmp/embedmongo-db-2f37a1e4-ef36-4ba0-a110-b1919a348ddd/local.ns, filling with zeroes...
+2018-06-09 14:36:29.972  INFO 7163 --- [      Thread-11] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-06-09T14:36:29.971-0500 [FileAllocator] allocating new datafile /tmp/embedmongo-db-2f37a1e4-ef36-4ba0-a110-b1919a348ddd/local.0, filling with zeroes...
+2018-06-09 14:36:29.972  INFO 7163 --- [      Thread-11] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-06-09T14:36:29.971-0500 [FileAllocator] creating directory /tmp/embedmongo-db-2f37a1e4-ef36-4ba0-a110-b1919a348ddd/_tmp
+2018-06-09 14:36:29.975  INFO 7163 --- [      Thread-11] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-06-09T14:36:29.975-0500 [FileAllocator] done allocating datafile /tmp/embedmongo-db-2f37a1e4-ef36-4ba0-a110-b1919a348ddd/local.0, size: 16MB,  took 0.001 secs
+2018-06-09 14:36:29.978  INFO 7163 --- [      Thread-11] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-06-09T14:36:29.977-0500 [initandlisten] build index on: local.startup_log properties: { v: 1, key: { _id: 1 }, name: "_id_", ns: "local.startup_log" }
+2018-06-09 14:36:29.978  INFO 7163 --- [      Thread-11] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-06-09T14:36:29.977-0500 [initandlisten] 	 added index to empty collection
+2018-06-09 14:36:29.978  INFO 7163 --- [      Thread-11] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-06-09T14:36:29.977-0500 [initandlisten] command local.$cmd command: create { create: "startup_log", size: 10485760, capped: true } ntoreturn:1 keyUpdates:0 numYields:0  reslen:37 758ms
+2018-06-09 14:36:29.978  INFO 7163 --- [      Thread-11] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-06-09T14:36:29.977-0500 [initandlisten] waiting for connections on port 39945
+2018-06-09 14:36:29.978  INFO 7163 --- [           main] d.f.embed.process.runtime.Executable     : start de.flapdoodle.embed.mongo.config.MongodConfigBuilder$ImmutableMongodConfig@7dc9d8c
+2018-06-09 14:36:30.019  INFO 7163 --- [      Thread-11] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2018-06-09T14:36:30.019-0500 [initandlisten] connection accepted from 127.0.0.1:53282 #1 (1 connection now open)
+2018-06-09 14:36:30.249  WARN 7163 --- [3alzeGS4Zt4bA-1] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused (Connection refused)
+2018-06-09 14:36:30.250  INFO 7163 --- [3alzeGS4Zt4bA-1] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer: tags=[{}], channel=null, acknowledgeMode=AUTO local queue size=0
+2018-06-09 14:36:30.424  INFO 7163 --- [           main] b.a.s.AuthenticationManagerConfiguration : 
+
+Using default security password: a91a1216-97db-43b7-83fe-c571611dbb24
+
+2018-06-09 14:36:30.973  INFO 7163 --- [           main] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from URL [jar:file:/home/joe/.m2/repository/org/springframework/integration/spring-integration-core/4.2.5.RELEASE/spring-integration-core-4.2.5.RELEASE.jar!/META-INF/spring.integration.default.properties]
+2018-06-09 14:36:31.065  INFO 7163 --- [           main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'taskScheduler'
+2018-06-09 14:36:32.117  INFO 7163 --- [           main] o.s.integration.channel.DirectChannel    : Channel 'application:-1.springCloudBusInput' has 1 subscriber(s).
+2018-06-09 14:36:32.277  WARN 7163 --- [           main] o.s.c.n.a.ArchaiusAutoConfiguration      : Netflix ConfigurationManager has already been installed, unable to re-install
+2018-06-09 14:36:32.447  INFO 7163 --- [           main] o.s.i.codec.kryo.CompositeKryoRegistrar  : configured Kryo registration [40, java.io.File] with serializer org.springframework.integration.codec.kryo.FileSerializer
+2018-06-09 14:36:33.181  INFO 7163 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147482648
+2018-06-09 14:36:33.388  INFO 7163 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@36bdeccd: startup date [Sat Jun 09 14:36:33 CDT 2018]; root of context hierarchy
+2018-06-09 14:36:33.459  INFO 7163 --- [           main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-06-09 14:36:33.499  INFO 7163 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'configurationPropertiesRebinderAutoConfiguration' of type [class org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$60d0b92a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-09 14:36:33.793  INFO 7163 --- [           main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at: http://localhost:8888
+2018-06-09 14:36:33.817  WARN 7163 --- [           main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/application/default": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+2018-06-09 14:36:33.829  INFO 7163 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : No active profile set, falling back to default profiles: default
+2018-06-09 14:36:33.844  INFO 7163 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@22ac0771: startup date [Sat Jun 09 14:36:33 CDT 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@7a3a7b43
+2018-06-09 14:36:33.920  INFO 7163 --- [           main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-06-09 14:36:34.090  INFO 7163 --- [           main] o.s.c.support.GenericApplicationContext  : Refreshing org.springframework.context.support.GenericApplicationContext@5ef6637f: startup date [Sat Jun 09 14:36:34 CDT 2018]; root of context hierarchy
+2018-06-09 14:36:34.189  INFO 7163 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.949 seconds (JVM running for 45.181)
+2018-06-09 14:36:34.225  INFO 7163 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Adding {message-handler:outbound.springCloudBus} as a subscriber to the 'springCloudBusOutput' channel
+2018-06-09 14:36:34.237  INFO 7163 --- [           main] o.s.integration.channel.DirectChannel    : Channel 'application:-1.springCloudBusOutput' has 1 subscriber(s).
+2018-06-09 14:36:34.252  INFO 7163 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : started outbound.springCloudBus
+2018-06-09 14:36:34.254  INFO 7163 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Adding {message-handler:outbound.springCloudHystrixStream} as a subscriber to the 'hystrixStreamOutput' channel
+2018-06-09 14:36:34.262  INFO 7163 --- [           main] o.s.integration.channel.DirectChannel    : Channel 'application:-1.hystrixStreamOutput' has 1 subscriber(s).
+2018-06-09 14:36:34.269  INFO 7163 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : started outbound.springCloudHystrixStream
+2018-06-09 14:36:34.277  INFO 7163 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147482648
+2018-06-09 14:36:34.292  INFO 7163 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2018-06-09 14:36:34.293  INFO 7163 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2018-06-09 14:36:34.293  INFO 7163 --- [           main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2018-06-09 14:36:34.293  INFO 7163 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : started _org.springframework.integration.errorLogger
+2018-06-09 14:36:34.294  INFO 7163 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147482647
+2018-06-09 14:36:34.345  INFO 7163 --- [           main] o.s.c.s.b.r.RabbitMessageChannelBinder   : declaring queue for inbound: springCloudBus.anonymous.NYPxse9WQHeqfoeC3EkaMg, bound to: springCloudBus
+2018-06-09 14:36:34.357  INFO 7163 --- [           main] o.s.integration.channel.DirectChannel    : Channel 'springCloudBus.anonymous.NYPxse9WQHeqfoeC3EkaMg.bridge' has 1 subscriber(s).
+2018-06-09 14:36:34.370  INFO 7163 --- [           main] o.s.i.a.i.AmqpInboundChannelAdapter      : started inbound.springCloudBus.anonymous.NYPxse9WQHeqfoeC3EkaMg
+2018-06-09 14:36:34.372  INFO 7163 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-06-09 14:36:34.376  INFO 7163 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2018-06-09 14:36:34.380  INFO 7163 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147482647
+2018-06-09 14:36:34.381  INFO 7163 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-06-09 14:36:34.432  INFO 7163 --- [           main] c.p.s.client.ExchangeRatesClientTest     : Started ExchangeRatesClientTest in 8.913 seconds (JVM running for 45.423)
+2018-06-09 14:36:35.284  WARN 7163 --- [3alzeGS4Zt4bA-2] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused (Connection refused)
+2018-06-09 14:36:35.284  INFO 7163 --- [3alzeGS4Zt4bA-2] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer: tags=[{}], channel=null, acknowledgeMode=AUTO local queue size=0
+]]></system-out>
+  </testcase>
+</testsuite>

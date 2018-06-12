@@ -1,0 +1,110 @@
+-------------------------------------------------------------------------------
+Test set: com.piggymetrics.statistics.client.ExchangeRatesClientTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 12.944 sec <<< FAILURE! - in com.piggymetrics.statistics.client.ExchangeRatesClientTest
+shouldRetrieveExchangeRates(com.piggymetrics.statistics.client.ExchangeRatesClientTest)  Time elapsed: 3.961 sec  <<< ERROR!
+com.netflix.hystrix.exception.HystrixRuntimeException: getRates failed and no fallback available.
+	at com.netflix.hystrix.AbstractCommand$16.call(AbstractCommand.java:805)
+	at com.netflix.hystrix.AbstractCommand$16.call(AbstractCommand.java:789)
+	at rx.internal.operators.OperatorOnErrorResumeNextViaFunction$4.onError(OperatorOnErrorResumeNextViaFunction.java:139)
+	at rx.internal.operators.OperatorDoOnEach$1.onError(OperatorDoOnEach.java:71)
+	at rx.internal.operators.OperatorDoOnEach$1.onError(OperatorDoOnEach.java:71)
+	at rx.internal.operators.OperatorDoOnEach$1.onError(OperatorDoOnEach.java:71)
+	at com.netflix.hystrix.AbstractCommand$DeprecatedOnFallbackHookApplication$1.onError(AbstractCommand.java:1494)
+	at com.netflix.hystrix.AbstractCommand$FallbackHookApplication$1.onError(AbstractCommand.java:1384)
+	at com.netflix.hystrix.HystrixCommand$2.call(HystrixCommand.java:313)
+	at com.netflix.hystrix.HystrixCommand$2.call(HystrixCommand.java:305)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.Observable.unsafeSubscribe(Observable.java:8460)
+	at rx.internal.operators.OperatorOnErrorResumeNextViaFunction$4.onError(OperatorOnErrorResumeNextViaFunction.java:141)
+	at rx.internal.operators.OperatorDoOnEach$1.onError(OperatorDoOnEach.java:71)
+	at rx.internal.operators.OperatorDoOnEach$1.onError(OperatorDoOnEach.java:71)
+	at com.netflix.hystrix.AbstractCommand$HystrixObservableTimeoutOperator$3.onError(AbstractCommand.java:1005)
+	at rx.internal.operators.OperatorDoOnEach$1.onError(OperatorDoOnEach.java:71)
+	at rx.internal.operators.OperatorSubscribeOn$1$1.onError(OperatorSubscribeOn.java:59)
+	at rx.internal.operators.OperatorDoOnEach$1.onError(OperatorDoOnEach.java:71)
+	at com.netflix.hystrix.AbstractCommand$DeprecatedOnRunHookApplication$1.onError(AbstractCommand.java:1453)
+	at com.netflix.hystrix.AbstractCommand$ExecutionHookApplication$1.onError(AbstractCommand.java:1349)
+	at com.netflix.hystrix.HystrixCommand$1.call(HystrixCommand.java:296)
+	at com.netflix.hystrix.HystrixCommand$1.call(HystrixCommand.java:288)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.Observable.unsafeSubscribe(Observable.java:8460)
+	at com.netflix.hystrix.AbstractCommand$5.call(AbstractCommand.java:521)
+	at com.netflix.hystrix.AbstractCommand$5.call(AbstractCommand.java:497)
+	at rx.Observable.unsafeSubscribe(Observable.java:8460)
+	at rx.internal.operators.OperatorSubscribeOn$1.call(OperatorSubscribeOn.java:94)
+	at com.netflix.hystrix.strategy.concurrency.HystrixContexSchedulerAction$1.call(HystrixContexSchedulerAction.java:56)
+	at com.netflix.hystrix.strategy.concurrency.HystrixContexSchedulerAction$1.call(HystrixContexSchedulerAction.java:47)
+	at com.netflix.hystrix.strategy.concurrency.HystrixContexSchedulerAction.call(HystrixContexSchedulerAction.java:69)
+	at rx.internal.schedulers.ScheduledAction.run(ScheduledAction.java:55)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: feign.FeignException: status 404 reading ExchangeRatesClient#getRates(Currency); content:
+{
+  "0": "#################################################################################################################################",
+  "1": "#                                                                                                                               #",
+  "2": "# IMPORTANT - PLEASE UPDATE YOUR API ENDPOINT                                                                                   #",
+  "3": "#                                                                                                                               #",
+  "4": "# This API endpoint is deprecated and has now been shut down. To keep using the Fixer API, please update your integration       #",
+  "5": "# to use the new Fixer API endpoint, designed as a simple drop-in replacement.                                                  #",
+  "6": "# You will be required to create an account at https://fixer.io and obtain an API access key.                                   #",
+  "7": "#                                                                                                                               #",
+  "8": "# For more information on how to upgrade please visit our Github Tutorial at: https://github.com/fixerAPI/fixer#readme          #",
+  "9": "#                                                                                                                               #",
+  "a": "#################################################################################################################################"
+}
+	at feign.FeignException.errorStatus(FeignException.java:62)
+	at feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:91)
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:134)
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:76)
+	at feign.hystrix.HystrixInvocationHandler$1.run(HystrixInvocationHandler.java:97)
+	at com.netflix.hystrix.HystrixCommand$1.call(HystrixCommand.java:293)
+	at com.netflix.hystrix.HystrixCommand$1.call(HystrixCommand.java:288)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:50)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.Observable.unsafeSubscribe(Observable.java:8460)
+	at com.netflix.hystrix.AbstractCommand$5.call(AbstractCommand.java:521)
+	at com.netflix.hystrix.AbstractCommand$5.call(AbstractCommand.java:497)
+	at rx.Observable.unsafeSubscribe(Observable.java:8460)
+	at rx.internal.operators.OperatorSubscribeOn$1.call(OperatorSubscribeOn.java:94)
+	at com.netflix.hystrix.strategy.concurrency.HystrixContexSchedulerAction$1.call(HystrixContexSchedulerAction.java:56)
+	at com.netflix.hystrix.strategy.concurrency.HystrixContexSchedulerAction$1.call(HystrixContexSchedulerAction.java:47)
+	at com.netflix.hystrix.strategy.concurrency.HystrixContexSchedulerAction.call(HystrixContexSchedulerAction.java:69)
+	at rx.internal.schedulers.ScheduledAction.run(ScheduledAction.java:55)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+

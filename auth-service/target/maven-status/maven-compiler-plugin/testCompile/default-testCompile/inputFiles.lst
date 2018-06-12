@@ -1,0 +1,5 @@
+/home/joe/Ellite/PiggyMetrics/auth-service/src/test/java/com/piggymetrics/auth/service/security/MongoUserDetailsServiceTest.java
+/home/joe/Ellite/PiggyMetrics/auth-service/src/test/java/com/piggymetrics/auth/service/UserServiceTest.java
+/home/joe/Ellite/PiggyMetrics/auth-service/src/test/java/com/piggymetrics/auth/repository/UserRepositoryTest.java
+/home/joe/Ellite/PiggyMetrics/auth-service/src/test/java/com/piggymetrics/auth/AuthServiceApplicationTests.java
+/home/joe/Ellite/PiggyMetrics/auth-service/src/test/java/com/piggymetrics/auth/controller/UserControllerTest.java

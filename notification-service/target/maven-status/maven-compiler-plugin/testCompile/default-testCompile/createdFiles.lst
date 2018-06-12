@@ -1,0 +1,6 @@
+com/piggymetrics/notification/service/EmailServiceImplTest.class
+com/piggymetrics/notification/controller/RecipientControllerTest.class
+com/piggymetrics/notification/service/RecipientServiceImplTest.class
+com/piggymetrics/notification/service/NotificationServiceImplTest.class
+com/piggymetrics/notification/NotificationServiceApplicationTests.class
+com/piggymetrics/notification/repository/RecipientRepositoryTest.class

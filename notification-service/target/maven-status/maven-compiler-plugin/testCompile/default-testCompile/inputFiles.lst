@@ -1,0 +1,6 @@
+/home/joe/Ellite/PiggyMetrics/notification-service/src/test/java/com/piggymetrics/notification/NotificationServiceApplicationTests.java
+/home/joe/Ellite/PiggyMetrics/notification-service/src/test/java/com/piggymetrics/notification/repository/RecipientRepositoryTest.java
+/home/joe/Ellite/PiggyMetrics/notification-service/src/test/java/com/piggymetrics/notification/service/NotificationServiceImplTest.java
+/home/joe/Ellite/PiggyMetrics/notification-service/src/test/java/com/piggymetrics/notification/service/RecipientServiceImplTest.java
+/home/joe/Ellite/PiggyMetrics/notification-service/src/test/java/com/piggymetrics/notification/service/EmailServiceImplTest.java
+/home/joe/Ellite/PiggyMetrics/notification-service/src/test/java/com/piggymetrics/notification/controller/RecipientControllerTest.java

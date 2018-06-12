@@ -1,0 +1,7 @@
+/home/joe/Ellite/PiggyMetrics/auth-service/src/main/java/com/piggymetrics/auth/service/UserService.java
+/home/joe/Ellite/PiggyMetrics/auth-service/src/main/java/com/piggymetrics/auth/service/UserServiceImpl.java
+/home/joe/Ellite/PiggyMetrics/auth-service/src/main/java/com/piggymetrics/auth/AuthApplication.java
+/home/joe/Ellite/PiggyMetrics/auth-service/src/main/java/com/piggymetrics/auth/repository/UserRepository.java
+/home/joe/Ellite/PiggyMetrics/auth-service/src/main/java/com/piggymetrics/auth/service/security/MongoUserDetailsService.java
+/home/joe/Ellite/PiggyMetrics/auth-service/src/main/java/com/piggymetrics/auth/domain/User.java
+/home/joe/Ellite/PiggyMetrics/auth-service/src/main/java/com/piggymetrics/auth/controller/UserController.java

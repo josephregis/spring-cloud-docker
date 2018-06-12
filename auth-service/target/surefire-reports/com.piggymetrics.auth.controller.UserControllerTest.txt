@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.piggymetrics.auth.controller.UserControllerTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.228 sec - in com.piggymetrics.auth.controller.UserControllerTest

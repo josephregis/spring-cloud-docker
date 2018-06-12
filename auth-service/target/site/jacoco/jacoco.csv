@@ -1,0 +1,8 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+auth-service,com.piggymetrics.auth,AuthApplication.webSecurityConfig,0,27,0,0,0,10,0,4,0,4
+auth-service,com.piggymetrics.auth,AuthApplication.OAuth2AuthorizationConfig,0,129,0,0,0,31,0,4,0,4
+auth-service,com.piggymetrics.auth,AuthApplication,5,3,0,0,2,1,1,1,1,1
+auth-service,com.piggymetrics.auth.service,UserServiceImpl,0,51,0,0,0,10,0,3,0,3
+auth-service,com.piggymetrics.auth.controller,UserController,0,10,0,0,0,4,0,3,0,3
+auth-service,com.piggymetrics.auth.service.security,MongoUserDetailsService,0,18,0,2,0,5,0,3,0,2
+auth-service,com.piggymetrics.auth.domain,User,0,27,0,0,0,12,0,10,0,10

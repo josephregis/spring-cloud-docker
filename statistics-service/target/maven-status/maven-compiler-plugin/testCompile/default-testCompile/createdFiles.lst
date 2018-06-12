@@ -1,0 +1,6 @@
+com/piggymetrics/statistics/StatisticsServiceApplicationTests.class
+com/piggymetrics/statistics/controller/StatisticsControllerTest.class
+com/piggymetrics/statistics/service/ExchangeRatesServiceImplTest.class
+com/piggymetrics/statistics/repository/DataPointRepositoryTest.class
+com/piggymetrics/statistics/client/ExchangeRatesClientTest.class
+com/piggymetrics/statistics/service/StatisticsServiceImplTest.class

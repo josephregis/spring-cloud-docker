@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>AuthApplication.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">auth-service</a> &gt; <a href="index.source.html" class="el_package">com.piggymetrics.auth</a> &gt; <span class="el_source">AuthApplication.java</span></div><h1>AuthApplication.java</h1><pre class="source lang-java linenums">package com.piggymetrics.auth;
+
+import com.piggymetrics.auth.service.security.MongoUserDetailsService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
+import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
+
+@SpringBootApplication
+@EnableResourceServer
+@EnableDiscoveryClient
+@EnableGlobalMethodSecurity(prePostEnabled = true)
+<span class="fc" id="L32">public class AuthApplication {</span>
+
+	public static void main(String[] args) {
+<span class="nc" id="L35">		SpringApplication.run(AuthApplication.class, args);</span>
+<span class="nc" id="L36">	}</span>
+
+	@Configuration
+	@EnableWebSecurity
+<span class="fc" id="L40">	protected static class webSecurityConfig extends WebSecurityConfigurerAdapter {</span>
+
+		@Autowired
+		private MongoUserDetailsService userDetailsService;
+
+		@Override
+		protected void configure(HttpSecurity http) throws Exception {
+			// @formatter:off
+<span class="fc" id="L48">			http</span>
+<span class="fc" id="L49">				.authorizeRequests().anyRequest().authenticated()</span>
+<span class="fc" id="L50">			.and()</span>
+<span class="fc" id="L51">				.csrf().disable();</span>
+			// @formatter:on
+<span class="fc" id="L53">		}</span>
+
+		@Override
+		protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+<span class="fc" id="L57">			auth.userDetailsService(userDetailsService)</span>
+<span class="fc" id="L58">					.passwordEncoder(new BCryptPasswordEncoder());</span>
+<span class="fc" id="L59">		}</span>
+
+		@Override
+		@Bean
+		public AuthenticationManager authenticationManagerBean() throws Exception {
+<span class="fc" id="L64">			return super.authenticationManagerBean();</span>
+		}
+	}
+
+	@Configuration
+	@EnableAuthorizationServer
+<span class="fc" id="L70">	protected static class OAuth2AuthorizationConfig extends AuthorizationServerConfigurerAdapter {</span>
+
+<span class="fc" id="L72">		private TokenStore tokenStore = new InMemoryTokenStore();</span>
+
+		@Autowired
+		@Qualifier(&quot;authenticationManagerBean&quot;)
+		private AuthenticationManager authenticationManager;
+
+		@Autowired
+		private MongoUserDetailsService userDetailsService;
+
+		@Autowired
+		private Environment env;
+
+		@Override
+		public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+
+			// TODO persist clients details
+
+			// @formatter:off
+<span class="fc" id="L90">			clients.inMemory()</span>
+<span class="fc" id="L91">					.withClient(&quot;browser&quot;)</span>
+<span class="fc" id="L92">					.authorizedGrantTypes(&quot;refresh_token&quot;, &quot;password&quot;)</span>
+<span class="fc" id="L93">					.scopes(&quot;ui&quot;)</span>
+<span class="fc" id="L94">			.and()</span>
+<span class="fc" id="L95">					.withClient(&quot;account-service&quot;)</span>
+<span class="fc" id="L96">					.secret(env.getProperty(&quot;ACCOUNT_SERVICE_PASSWORD&quot;))</span>
+<span class="fc" id="L97">					.authorizedGrantTypes(&quot;client_credentials&quot;, &quot;refresh_token&quot;)</span>
+<span class="fc" id="L98">					.scopes(&quot;server&quot;)</span>
+<span class="fc" id="L99">			.and()</span>
+<span class="fc" id="L100">					.withClient(&quot;statistics-service&quot;)</span>
+<span class="fc" id="L101">					.secret(env.getProperty(&quot;STATISTICS_SERVICE_PASSWORD&quot;))</span>
+<span class="fc" id="L102">					.authorizedGrantTypes(&quot;client_credentials&quot;, &quot;refresh_token&quot;)</span>
+<span class="fc" id="L103">					.scopes(&quot;server&quot;)</span>
+<span class="fc" id="L104">			.and()</span>
+<span class="fc" id="L105">					.withClient(&quot;notification-service&quot;)</span>
+<span class="fc" id="L106">					.secret(env.getProperty(&quot;NOTIFICATION_SERVICE_PASSWORD&quot;))</span>
+<span class="fc" id="L107">					.authorizedGrantTypes(&quot;client_credentials&quot;, &quot;refresh_token&quot;)</span>
+<span class="fc" id="L108">					.scopes(&quot;server&quot;);</span>
+			// @formatter:on
+<span class="fc" id="L110">		}</span>
+
+		@Override
+		public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+<span class="fc" id="L114">			endpoints</span>
+<span class="fc" id="L115">					.tokenStore(tokenStore)</span>
+<span class="fc" id="L116">					.authenticationManager(authenticationManager)</span>
+<span class="fc" id="L117">					.userDetailsService(userDetailsService);</span>
+<span class="fc" id="L118">		}</span>
+
+		@Override
+		public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
+<span class="fc" id="L122">			oauthServer</span>
+<span class="fc" id="L123">					.tokenKeyAccess(&quot;permitAll()&quot;)</span>
+<span class="fc" id="L124">					.checkTokenAccess(&quot;isAuthenticated()&quot;);</span>
+<span class="fc" id="L125">		}</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

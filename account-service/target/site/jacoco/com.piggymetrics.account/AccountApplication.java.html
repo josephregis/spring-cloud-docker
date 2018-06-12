@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>AccountApplication.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">account-service</a> &gt; <a href="index.source.html" class="el_package">com.piggymetrics.account</a> &gt; <span class="el_source">AccountApplication.java</span></div><h1>AccountApplication.java</h1><pre class="source lang-java linenums">package com.piggymetrics.account;
+
+import com.piggymetrics.account.service.security.CustomUserInfoTokenServices;
+import feign.RequestInterceptor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.oauth2.resource.ResourceServerProperties;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.cloud.security.oauth2.client.feign.OAuth2FeignRequestInterceptor;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.oauth2.client.DefaultOAuth2ClientContext;
+import org.springframework.security.oauth2.client.OAuth2RestTemplate;
+import org.springframework.security.oauth2.client.token.grant.client.ClientCredentialsResourceDetails;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
+import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
+import org.springframework.security.oauth2.provider.token.ResourceServerTokenServices;
+
+@SpringBootApplication
+@EnableResourceServer
+@EnableDiscoveryClient
+@EnableOAuth2Client
+@EnableFeignClients
+@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableConfigurationProperties
+@Configuration
+<span class="fc" id="L34">public class AccountApplication extends ResourceServerConfigurerAdapter {</span>
+
+	@Autowired
+	private ResourceServerProperties sso;
+
+	public static void main(String[] args) {
+<span class="nc" id="L40">		SpringApplication.run(AccountApplication.class, args);</span>
+<span class="nc" id="L41">	}</span>
+
+	@Bean
+	@ConfigurationProperties(prefix = &quot;security.oauth2.client&quot;)
+	public ClientCredentialsResourceDetails clientCredentialsResourceDetails() {
+<span class="fc" id="L46">		return new ClientCredentialsResourceDetails();</span>
+	}
+
+	@Bean
+	public RequestInterceptor oauth2FeignRequestInterceptor(){
+<span class="fc" id="L51">		return new OAuth2FeignRequestInterceptor(new DefaultOAuth2ClientContext(), clientCredentialsResourceDetails());</span>
+	}
+
+	@Bean
+	public OAuth2RestTemplate clientCredentialsRestTemplate() {
+<span class="fc" id="L56">		return new OAuth2RestTemplate(clientCredentialsResourceDetails());</span>
+	}
+
+	@Bean
+	public ResourceServerTokenServices tokenServices() {
+<span class="fc" id="L61">		return new CustomUserInfoTokenServices(sso.getUserInfoUri(), sso.getClientId());</span>
+	}
+
+	@Override
+	public void configure(HttpSecurity http) throws Exception {
+<span class="fc" id="L66">		http.authorizeRequests()</span>
+<span class="fc" id="L67">				.antMatchers(&quot;/&quot; , &quot;/demo&quot;).permitAll()</span>
+<span class="fc" id="L68">				.anyRequest().authenticated();</span>
+<span class="fc" id="L69">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

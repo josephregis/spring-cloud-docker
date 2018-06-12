@@ -1,0 +1,6 @@
+/home/joe/Ellite/PiggyMetrics/statistics-service/src/test/java/com/piggymetrics/statistics/StatisticsServiceApplicationTests.java
+/home/joe/Ellite/PiggyMetrics/statistics-service/src/test/java/com/piggymetrics/statistics/service/StatisticsServiceImplTest.java
+/home/joe/Ellite/PiggyMetrics/statistics-service/src/test/java/com/piggymetrics/statistics/client/ExchangeRatesClientTest.java
+/home/joe/Ellite/PiggyMetrics/statistics-service/src/test/java/com/piggymetrics/statistics/service/ExchangeRatesServiceImplTest.java
+/home/joe/Ellite/PiggyMetrics/statistics-service/src/test/java/com/piggymetrics/statistics/controller/StatisticsControllerTest.java
+/home/joe/Ellite/PiggyMetrics/statistics-service/src/test/java/com/piggymetrics/statistics/repository/DataPointRepositoryTest.java
